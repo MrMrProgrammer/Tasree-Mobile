@@ -1,7 +1,18 @@
-body {
-    background-color: aqua;
-    font-family: Arial, Times, New Roman, or similar typefaces;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, #141e30 , #243b55);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: Nunito Sans,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
+
+
+
 
 #logo {
     width: 70%;
@@ -9,5 +20,111 @@ body {
 }
 
 #hotel-icon {
-    width: 70%;
+    width: 60%;
+}
+#footer{
+    background-color: seagreen;
+    border-radius: 15px 15px 0 0;
+}
+#footer a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+hr {
+    color: white;
+    background-color: white;
+}
+
+#ticket-number {
+    width: 100px;
+    height: 100px;
+    color: white;
+    background-color: #28a745;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#bill hr {
+    margin: 0;
+    padding: 0;
+    color: gray;
+    background-color: gray;
+}
+
+.currency {
+    color: rgb(184, 184, 184);
+}
+
+.total {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btn {
+    width: 90%;
+}
+
+.btn-icon {
+    width: 30px;
+}
+
+.discount {
+    color: #28a745;
+}
+
+#bill-box {
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#myDropdown {
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+/* ========================================== */
+
+.dropdown {
+    /* position: relative; */
+    display: inline-block;
+    width: 100%;
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 10px;
+    border: none;
+    /* cursor: pointer; */
+}
+
+.dropdown-content {
+    display: none;
+    /* min-width: 100%; */
+    /* max-height: 0; */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+    margin-top: 5px;
+}
+
+.dropdown-content p {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    /* max-height: 1000px; ارتفاع مورد نظر خود را تنظیم کنید */
 }

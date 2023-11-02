@@ -11,6 +11,46 @@
         <link rel="stylesheet" href="css/bootstrap.css"/>
         <link rel="stylesheet" href="css/style.css"/>
 
+        <style>
+            #icon {
+                width: 50px;
+                position: relative; 
+                animation: moveIcon 3s linear forwards;
+                transform: scaleX(-1);
+            }
+
+            /* @keyframes moveIcon {
+                0% {
+                    left: 0;
+                }
+
+                100% {
+                    left: 42%;
+                }
+            } */
+
+            @keyframes moveIcon {
+                0% {
+                    left: 48%;
+                }
+
+                100% {
+                    left: 67%;
+                }
+            }
+
+            /* @keyframes moveIcon {
+                0% {
+                    left: 75%;
+                }
+
+                100% {
+                    left: 86%;
+                }
+            } */
+            
+        </style>
+
 
         <title>Tasree</title>
     </head>
@@ -69,75 +109,82 @@
 
             <hr/>
 
-            <div class="row">
-                <div id="bill" class="col-12 text-center">
+            <div class="row text-center">
+                <div class="col-12">
+                    <div class="dropdown">
+                        <button class="dropbtn btn" style="width: 100%;">Billing Details <span id="dropdown-arrows-up" style="display: none;">↑</span><span id="dropdown-arrows-down">↓</span></button>
+                
+                        <div class="dropdown-content" id="myDropdown">
 
-                    <div class="row">
-                        <div class="col-6 text-left">Parking :</div>
-                        <div class="col-6 text-right">10<span class="currency"> $</span></div>
-                        
+                            <div class="row">
+                                <div class="col-6 text-left">Parking :</div>
+                                <div class="col-6 text-right">10<span class="currency"> $</span></div>
+                                
+                            </div>
+        
+                            <hr/>
+                            <div class="row">
+                                <div class="col-6 text-left">Carwash :</div>
+                                <div class="col-6 text-right">10<span class="currency"> $</span></div>
+                            </div>
+        
+                            <hr/>
+                            <div class="row">
+                                <div class="col-6 text-left">Fuel :</div>
+                                <div class="col-6 text-right">15<span class="currency"> $</span></div>
+                            </div>
+        
+                            <hr/>
+                            <div class="row">
+                                <div class="col-6 text-left">Extra :</div>
+                                <div class="col-6 text-right">0<span class="currency"> $</span></div>
+                            </div>
+        
+                            <hr/>
+                            <div class="row">
+                                <div class="col-6 text-left discount">Discount :</div>
+                                <div class="col-6 text-right discount">20<span class="currency"> $</span></div>
+                            </div>
+        
+                            <hr/>
+                            <div class="row">
+                                <div class="col-6 text-left total">Total :</div>
+                                <div class="col-6 text-right total">15<span class="currency"> $</span></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <hr/>
-                    <div class="row">
-                        <div class="col-6 text-left">Carwash :</div>
-                        <div class="col-6 text-right">10<span class="currency"> $</span></div>
-                    </div>
-
-                    <hr/>
-                    <div class="row">
-                        <div class="col-6 text-left">Fuel :</div>
-                        <div class="col-6 text-right">15<span class="currency"> $</span></div>
-                    </div>
-
-                    <hr/>
-                    <div class="row">
-                        <div class="col-6 text-left">Extra :</div>
-                        <div class="col-6 text-right">0<span class="currency"> $</span></div>
-                    </div>
-
-                    <hr/>
-                    <div class="row">
-                        <div class="col-6 text-left discount">Discount :</div>
-                        <div class="col-6 text-right discount">20<span class="currency"> $</span></div>
-                    </div>
-
-                    <hr/>
-                    <div class="row">
-                        <div class="col-6 text-left total">Total :</div>
-                        <div class="col-6 text-right total">15<span class="currency"> $</span></div>
-                    </div>
                 </div>
             </div>
 
             <hr/>
 
-            <p style="text-align: center;">Requested With : </p>
-
             <div class="row">
-                <div class="col-6 text-right">
-                    <a class="btn btn-success">
-                        <img class="btn-icon" src="file/payment-method.png"/> Online pay
-                    </a>
+                <div class="col-12" > 
+                    <img src="file/icons8-racing-car-96.png" id="icon">
                 </div>
-
-                <div class="col-6 text-left">
-                    <a class="btn btn-primary">
-                        <img class="btn-icon" src="file/payment-method-2.png"/> Cash
-                    </a>
+            </div>
+            <div class="row" >
+                <div class="col-12">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:55%">
+                        Requeted
+                        </div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width:25%">
+                        On the way
+                        </div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:20%">
+                        Ready
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
-            <hr/>
+            <br/>
 
             <div class="row">
-                <div class="col-8">
-                    <input class="form-control" placeholder="Promotion Code">
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-info">Apply</button>
-                </div>
+                <div style="font-size: 24px;" class="col-12 text-center">Plate Number : 22J324</div>
+
             </div>
 
             <br/>
@@ -151,5 +198,30 @@
             </div>
 
         </div>
+
+        <script>
+
+            document.querySelector(".dropbtn").addEventListener("click", function() {
+
+                var dropdownContent = document.getElementById("myDropdown");
+
+                if (dropdownContent.style.display === "block")
+                {
+                    dropdownContent.style.display = "none";
+                    document.getElementById("dropdown-arrows-down").style.display="inline-block";
+                    document.getElementById("dropdown-arrows-up").style.display="none";
+
+                }
+                
+                else {
+                    dropdownContent.style.display = "block";
+                    document.getElementById("dropdown-arrows-down").style.display="none";
+                    document.getElementById("dropdown-arrows-up").style.display="inline-block";
+
+                }
+            });
+
+        </script>
+
     </body>
 </html>
